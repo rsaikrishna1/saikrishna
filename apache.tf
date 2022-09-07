@@ -39,7 +39,7 @@ resource "aws_security_group" "apache" {
 
 
 
-resource "aws_instance" "apache"{
+resource "aws_instance" "grafana"{
   ami      = "ami-06489866022e12a14"
   instance_type = "t2.micro"
   #vpc_id = aws_vpc.vpc.id
@@ -47,6 +47,6 @@ resource "aws_instance" "apache"{
   vpc_security_group_ids = [aws_security_group.apache.id]
 
   tags = {
-    Name = "stage-apache"
+    Name = "stage-grafana"
   }
 }
